@@ -7,12 +7,12 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class MLApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 320, 240);
-        stage.setTitle("Hello!");
+        FXMLLoader fxmlLoader = new FXMLLoader(MLApplication.class.getResource("/dev/odiador/inventarioml/fxml/signin.fxml"));
+        Scene scene = new Scene(fxmlLoader.load());
+        stage.setTitle("ML - Inversiones médicas");
         stage.setScene(scene);
         stage.show();
     }

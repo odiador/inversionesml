@@ -1,11 +1,12 @@
 module dev.odiador.inventarioml {
-    requires javafx.controls;
+    requires transitive javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
 
     requires net.synedra.validatorfx;
     requires eu.hansolo.tilesfx;
+    requires static lombok;
 
-    opens dev.odiador.inventarioml to javafx.fxml;
+    opens dev.odiador.inventarioml.viewparts to javafx.fxml;
     exports dev.odiador.inventarioml;
 }
