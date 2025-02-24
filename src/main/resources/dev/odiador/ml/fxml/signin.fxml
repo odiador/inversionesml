@@ -35,7 +35,7 @@
             </VBox>
             <Hyperlink onAction="#onRegisterPressed" text="¿No tienes cuenta? Crea una" textFill="#5b5b5b" />
             <Hyperlink onAction="#onForgotPasswordPressed" text="¿Olvidaste tu contraseña?" textFill="#5b5b5b" />
-            <Button mnemonicParsing="false" onAction="#onSignInPressed" style="-fx-background-color: #000; -fx-label-padding: 5; -fx-text-fill: white; -fx-background-radius: 8;" text="Iniciar sesión">
+            <Button fx:id="btnSignIn" mnemonicParsing="false" onAction="#onSignInPressed" style="-fx-background-color: #000; -fx-label-padding: 5; -fx-text-fill: white; -fx-background-radius: 8;" text="Iniciar sesión">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
