@@ -1,4 +1,4 @@
-module dev.odiador.inventarioml {
+module dev.odiador.ml {
     requires transitive javafx.controls;
     requires javafx.fxml;
     requires javafx.web;
@@ -7,6 +7,6 @@ module dev.odiador.inventarioml {
     requires eu.hansolo.tilesfx;
     requires static lombok;
 
-    opens dev.odiador.inventarioml.viewparts to javafx.fxml;
-    exports dev.odiador.inventarioml;
+    opens dev.odiador.ml.viewparts to javafx.fxml;
+    exports dev.odiador.ml;
 }

@@ -1,6 +1,6 @@
-package dev.odiador.inventarioml.viewmodel;
+package dev.odiador.ml.viewmodel;
 
-import dev.odiador.inventarioml.viewparts.LoginViewPart;
+import dev.odiador.ml.viewparts.LoginViewPart;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 

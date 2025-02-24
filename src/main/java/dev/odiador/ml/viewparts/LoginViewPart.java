@@ -1,9 +1,9 @@
-package dev.odiador.inventarioml.viewparts;
+package dev.odiador.ml.viewparts;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import dev.odiador.inventarioml.viewmodel.LoginViewModel;
+import dev.odiador.ml.viewmodel.LoginViewModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

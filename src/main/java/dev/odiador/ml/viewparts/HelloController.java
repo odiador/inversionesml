@@ -1,4 +1,4 @@
-package dev.odiador.inventarioml.viewparts;
+package dev.odiador.ml.viewparts;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;

@@ -26,8 +26,8 @@ tasks.withType(JavaCompile) {
 }
 
 application {
-  mainModule = 'dev.odiador.inventarioml'
-  mainClass = 'dev.odiador.inventarioml.MLApplication'
+  mainModule = 'dev.odiador.ml'
+  mainClass = 'dev.odiador.ml.MLApplication'
 }
 
 javafx {
