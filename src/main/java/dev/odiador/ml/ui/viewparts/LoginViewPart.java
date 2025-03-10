@@ -1,11 +1,11 @@
-package dev.odiador.ml.viewparts;
+package dev.odiador.ml.ui.viewparts;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-import dev.odiador.ml.viewmodel.LoginViewModel;
-import javafx.animation.Interpolator;
-import javafx.animation.ScaleTransition;
+import dev.odiador.ml.fxutils.TransitionsUtil;
+import dev.odiador.ml.ui.UI;
+import dev.odiador.ml.ui.viewmodels.contenedorlogin.LoginViewModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -15,7 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.util.Duration;
 import lombok.Getter;
 
-public class LoginViewPart implements Initializable {
+public class LoginViewPart implements Initializable, UIProvider {
 
     @FXML
     @Getter
@@ -29,10 +29,10 @@ public class LoginViewPart implements Initializable {
     @Getter
     private Button btnSignIn;
 
+    private UI ui;
+
     private static LoginViewPart instance;
     private static LoginViewModel viewModel;
-
-    private ScaleTransition signinTransition;
 
     public LoginViewPart() {
         LoginViewPart.instance = this;
@@ -61,25 +61,17 @@ public class LoginViewPart implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         viewModel = new LoginViewModel(this);
-        signinTransition = new ScaleTransition(Duration.millis(100), btnSignIn);
-        signinTransition.setFromX(1);
-        signinTransition.setToX(1.1);
-        signinTransition.setFromY(1);
-        signinTransition.setToY(1.1);
-        signinTransition.setInterpolator(Interpolator.EASE_BOTH);
+        TransitionsUtil.configureHoverTransition(btnSignIn, Duration.millis(100));
+    }
 
-        btnSignIn.setOnMouseEntered((e) -> {
-            signinTransition.stop();
-            signinTransition.setRate(1);
-            signinTransition.jumpTo(Duration.ZERO);
-            signinTransition.play();
-        });
-        btnSignIn.setOnMouseExited((e) -> {
-            signinTransition.stop();
-            signinTransition.setRate(-1);
-            signinTransition.jumpTo(Duration.millis(100));
-            signinTransition.play();
-        });
+    @Override
+    public UI getTheUI() {
+        return this.ui;
+    }
+
+    @Override
+    public void setTheUI(UI ui) {
+        this.ui = ui;
     }
 
 }

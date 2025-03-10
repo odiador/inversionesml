@@ -7,6 +7,6 @@ module dev.odiador.ml {
     requires eu.hansolo.tilesfx;
     requires static lombok;
 
-    opens dev.odiador.ml.viewparts to javafx.fxml;
+    opens dev.odiador.ml.ui.viewparts to javafx.fxml;
     exports dev.odiador.ml;
 }
