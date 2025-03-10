@@ -1,22 +1,19 @@
 package dev.odiador.ml.ui.viewmodels.contenedorlogin;
 
+import dev.odiador.ml.ui.viewmodels.AbstractViewModel;
 import dev.odiador.ml.ui.viewparts.LoginViewPart;
-import dev.odiador.ml.ui.viewparts.UIProvider;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import lombok.Getter;
 
-public class LoginViewModel {
+public class LoginViewModel extends AbstractViewModel {
 
     private TextField tfMail;
     private PasswordField tfPassword;
-    @Getter
-    private UIProvider uiProvider;
 
     public LoginViewModel(LoginViewPart loginViewPart) {
+        super(loginViewPart);
         this.tfMail = loginViewPart.getTfMail();
         this.tfPassword = loginViewPart.getTfPassword();
-        this.uiProvider = loginViewPart;
     }
 
     public void onRegisterPressed() {

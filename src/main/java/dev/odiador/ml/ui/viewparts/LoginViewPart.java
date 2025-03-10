@@ -32,7 +32,6 @@ public class LoginViewPart extends ViewPart {
 
     public LoginViewPart() {
         LoginViewPart.instance = this;
-        viewModel = new LoginViewModel(this);
     }
 
     public static LoginViewPart getInstance() {
