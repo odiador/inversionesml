@@ -2,8 +2,10 @@ package dev.odiador.ml;
 
 import java.io.IOException;
 
+import dev.odiador.ml.fxutils.FXMLPerspective;
+import dev.odiador.ml.fxutils.FXMLPerspective.Presentation;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
@@ -14,9 +16,10 @@ public class MLApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         MLApplication.stage = stage;
-        FXMLLoader fxmlLoader = new FXMLLoader(MLApplication.class.getResource("/dev/odiador/ml/fxml/signin.fxml"));
-        Scene scene = new Scene(fxmlLoader.load());
-        stage.getIcons().add(new Image(MLApplication.class.getResource("/dev/odiador/ml/images/notext.png").toString()));
+        Parent presentation = FXMLPerspective.loadPerspective(Presentation.SIGN_IN).getPresentation();
+        Scene scene = new Scene(presentation);
+        stage.getIcons()
+                .add(new Image(MLApplication.class.getResource("/dev/odiador/ml/images/notext.png").toString()));
         stage.setTitle("ML");
         stage.setScene(scene);
         stage.show();

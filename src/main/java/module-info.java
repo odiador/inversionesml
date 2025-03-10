@@ -6,6 +6,7 @@ module dev.odiador.ml {
     requires net.synedra.validatorfx;
     requires eu.hansolo.tilesfx;
     requires static lombok;
+    requires javafx.graphics;
 
     opens dev.odiador.ml.ui.viewparts to javafx.fxml;
     exports dev.odiador.ml;
