@@ -2,9 +2,16 @@ plugins {
   id 'java'
   id 'application'
   id 'org.javamodularity.moduleplugin' version '1.8.12'
-  id 'org.openjfx.javafxplugin' version '0.0.13'
-  id 'org.beryx.jlink' version '2.25.0'
+  id 'org.openjfx.javafxplugin' version '0.1.0'
+  id 'org.beryx.jlink' version '3.0.1'
   id("io.freefair.lombok") version "8.12.1"
+}
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(17)
+    }
+    sourceCompatibility = JavaVersion.VERSION_17
 }
 
 group 'dev.odiador'
@@ -14,15 +21,11 @@ repositories {
   mavenCentral()
 }
 
-ext {
-  junitVersion = '5.10.2'
-}
-
-sourceCompatibility = '17'
-targetCompatibility = '17'
+def junitVersion = '5.10.2'
 
 tasks.withType(JavaCompile) {
-  options.encoding = 'UTF-8'
+    options.encoding = 'UTF-8'
+    destinationDirectory = file("$buildDir/classes/java/main")
 }
 
 application {
@@ -46,8 +49,8 @@ dependencies {
   testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
   testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
 
-  compileOnly 'org.projectlombok:lombok:1.18.24' // or the appropriate version
-  annotationProcessor 'org.projectlombok:lombok:1.18.24' // Add this if missing
+  compileOnly 'org.projectlombok:lombok:1.18.32'
+  annotationProcessor 'org.projectlombok:lombok:1.18.32'
 }
 
 test {
@@ -61,6 +64,6 @@ jlink {
   }
 }
 
-jlinkZip {
+tasks.jlinkZip {
   group = 'distribution'
 }
