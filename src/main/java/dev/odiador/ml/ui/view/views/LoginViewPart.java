@@ -1,8 +1,8 @@
 package dev.odiador.ml.ui.view.views;
 
 import dev.odiador.ml.ui.fxutils.TransitionsUtil;
-import dev.odiador.ml.ui.viewmodels.contenedorlogin.LoginViewModel;
-import dev.odiador.ml.ui.viewparts.ViewPart;
+import dev.odiador.ml.ui.view.ViewPart;
+import dev.odiador.ml.ui.viewmodels.LoginViewModel;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

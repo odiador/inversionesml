@@ -1,9 +1,9 @@
-package dev.odiador.ml.ui.viewmodels.contenedorlogin;
+package dev.odiador.ml.ui.viewmodels;
 
 import dev.odiador.ml.ui.fxutils.Presentation.ViewType;
 import dev.odiador.ml.ui.view.ViewManagement;
+import dev.odiador.ml.ui.view.ViewManagement.PosType;
 import dev.odiador.ml.ui.view.views.LoginViewPart;
-import dev.odiador.ml.ui.viewmodels.AbstractViewModel;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
@@ -29,7 +29,7 @@ public class LoginViewModel extends AbstractViewModel<LoginViewPart> {
     }
 
     public void onSignInPressed() {
-        ViewManagement.getInstance().setView(ViewType.MAIN_PANE);
+        ViewManagement.getInstance().setView(PosType.CENTER, ViewType.SIGN_IN);
     }
 
     public String getTfMailText() {

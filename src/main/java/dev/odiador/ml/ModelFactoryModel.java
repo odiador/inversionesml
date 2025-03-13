@@ -1,16 +1,14 @@
-package dev.odiador.ml.ui.view.model;
+package dev.odiador.ml;
 
 import java.io.IOException;
 import java.util.Objects;
 
-import dev.odiador.ml.ModelFactory;
 import dev.odiador.ml.domain.Domain;
 import dev.odiador.ml.ui.UI;
 import dev.odiador.ml.ui.fxutils.Presentation;
-import dev.odiador.ml.ui.view.views.LoginViewPart;
-import dev.odiador.ml.ui.view.views.MainPaneViewPart;
+import dev.odiador.ml.ui.view.ViewPart;
+import dev.odiador.ml.ui.view.views.*;
 import dev.odiador.ml.ui.viewmodels.AbstractViewModel;
-import dev.odiador.ml.ui.viewparts.ViewPart;
 import lombok.Getter;
 import lombok.Setter;
 

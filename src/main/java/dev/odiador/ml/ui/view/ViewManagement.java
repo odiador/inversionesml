@@ -1,8 +1,10 @@
 package dev.odiador.ml.ui.view;
 
 import dev.odiador.ml.MLApplication;
+import dev.odiador.ml.ModelFactoryModel;
+import dev.odiador.ml.ui.fxutils.Presentation;
 import dev.odiador.ml.ui.fxutils.Presentation.ViewType;
-import dev.odiador.ml.ui.view.model.ModelFactoryModel;
+import dev.odiador.ml.ui.view.views.MainPaneViewPart;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
@@ -17,16 +19,25 @@ public class ViewManagement {
 
     @Getter
     private Stage stage;
+    private Presentation<MainPaneViewPart> mainPane;
 
-    public void setInfo(ViewType viewType, String title, String image) {
-        setView(viewType);
+    public void initialize(ViewType viewType, String title, String image) {
+        initializeMainPane();
+        setView(PosType.CENTER, viewType);
         setTitle(title);
         setImage(image);
     }
 
-    public void setView(ViewType viewType) {
+    public void setView(PosType posType, ViewType viewType) {
         Parent view = ModelFactoryModel.getInstance().loadView(viewType).getView();
-        stage.getScene().setRoot(view);
+        mainPane.getViewPart().getViewModel().setElement(posType, view);
+    }
+
+    @SuppressWarnings("unchecked")
+    private void initializeMainPane() {
+        mainPane = (Presentation<MainPaneViewPart>) ModelFactoryModel.getInstance()
+                .loadView(ViewType.MAIN_PANE);
+        stage.getScene().setRoot(mainPane.getView());
     }
 
     private static class SingletonHolder {
@@ -49,8 +60,11 @@ public class ViewManagement {
 
     public void setStage(Stage stage) {
         this.stage = stage;
-        if (stage.getScene() == null) {
+        if (stage.getScene() == null)
             stage.setScene(new Scene(new BorderPane(), 800, 600));
-        }
+    }
+
+    public enum PosType {
+        TOP, CENTER, LEFT, RIGHT, BOTTOM;
     }
 }

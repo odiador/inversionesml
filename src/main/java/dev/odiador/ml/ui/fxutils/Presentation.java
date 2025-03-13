@@ -3,8 +3,8 @@ package dev.odiador.ml.ui.fxutils;
 import java.io.IOException;
 
 import dev.odiador.ml.MLApplication;
+import dev.odiador.ml.ui.view.ViewPart;
 import dev.odiador.ml.ui.viewmodels.AbstractViewModel;
-import dev.odiador.ml.ui.viewparts.ViewPart;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import lombok.Getter;

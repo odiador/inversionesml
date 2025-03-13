@@ -12,7 +12,6 @@ module dev.odiador.ml {
 
     exports dev.odiador.ml;
     exports dev.odiador.ml.ui;
-    exports dev.odiador.ml.ui.view.model;
     exports dev.odiador.ml.domain;
     exports dev.odiador.ml.ui.fxutils;
 }

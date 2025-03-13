@@ -1,10 +1,10 @@
-package dev.odiador.ml.ui.viewparts;
+package dev.odiador.ml.ui.view;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
+import dev.odiador.ml.ModelFactoryModel;
 import dev.odiador.ml.ui.UI;
-import dev.odiador.ml.ui.view.model.ModelFactoryModel;
 import dev.odiador.ml.ui.viewmodels.AbstractViewModel;
 import javafx.fxml.Initializable;
 import lombok.Getter;

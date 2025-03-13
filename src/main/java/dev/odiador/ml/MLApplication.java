@@ -12,7 +12,7 @@ public class MLApplication extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         ViewManagement.getInstance().setStage(stage);
-        ViewManagement.getInstance().setInfo(ViewType.SIGN_IN, "ML Inversiones Médicas", "notext.png");
+        ViewManagement.getInstance().initialize(ViewType.SIGN_IN, "ML Inversiones Médicas", "notext.png");
         stage.show();
     }
 
