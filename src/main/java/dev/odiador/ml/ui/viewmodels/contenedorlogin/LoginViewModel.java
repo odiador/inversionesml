@@ -1,19 +1,21 @@
 package dev.odiador.ml.ui.viewmodels.contenedorlogin;
 
+import dev.odiador.ml.ui.fxutils.Presentation.ViewType;
+import dev.odiador.ml.ui.view.ViewManagement;
+import dev.odiador.ml.ui.view.views.LoginViewPart;
 import dev.odiador.ml.ui.viewmodels.AbstractViewModel;
-import dev.odiador.ml.ui.viewparts.LoginViewPart;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
-public class LoginViewModel extends AbstractViewModel {
+public class LoginViewModel extends AbstractViewModel<LoginViewPart> {
 
     private TextField tfMail;
     private PasswordField tfPassword;
 
-    public LoginViewModel(LoginViewPart loginViewPart) {
-        super(loginViewPart);
-        this.tfMail = loginViewPart.getTfMail();
-        this.tfPassword = loginViewPart.getTfPassword();
+    @Override
+    public void updateData(LoginViewPart viewPart) {
+        this.tfMail = viewPart.getTfMail();
+        this.tfPassword = viewPart.getTfPassword();
     }
 
     public void onRegisterPressed() {
@@ -27,8 +29,7 @@ public class LoginViewModel extends AbstractViewModel {
     }
 
     public void onSignInPressed() {
-        System.out.println(tfMail.getText());
-        System.out.println(tfPassword.getText());
+        ViewManagement.getInstance().setView(ViewType.MAIN_PANE);
     }
 
     public String getTfMailText() {

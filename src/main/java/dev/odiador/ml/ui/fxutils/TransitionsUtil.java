@@ -1,4 +1,4 @@
-package dev.odiador.ml.fxutils;
+package dev.odiador.ml.ui.fxutils;
 
 import javafx.animation.Interpolator;
 import javafx.animation.ScaleTransition;

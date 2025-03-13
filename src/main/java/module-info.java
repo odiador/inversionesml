@@ -8,6 +8,11 @@ module dev.odiador.ml {
     requires static lombok;
     requires javafx.graphics;
 
-    opens dev.odiador.ml.ui.viewparts to javafx.fxml;
+    opens dev.odiador.ml.ui.view.views to javafx.fxml;
+
     exports dev.odiador.ml;
+    exports dev.odiador.ml.ui;
+    exports dev.odiador.ml.ui.view.model;
+    exports dev.odiador.ml.domain;
+    exports dev.odiador.ml.ui.fxutils;
 }

@@ -1,12 +1,13 @@
 package dev.odiador.ml.ui.viewmodels.contenedorPrincipal;
 
+import dev.odiador.ml.ui.view.views.MainPaneViewPart;
 import dev.odiador.ml.ui.viewmodels.AbstractViewModel;
-import dev.odiador.ml.ui.viewparts.MainPaneViewPart;
 
-public class MainPaneViewModel extends AbstractViewModel {
+public class MainPaneViewModel extends AbstractViewModel<MainPaneViewPart> {
 
-    public MainPaneViewModel(MainPaneViewPart mainPaneViewPart) {
-        super(mainPaneViewPart);
+    @Override
+    public void updateData(MainPaneViewPart viewPart) {
+
     }
 
 }
